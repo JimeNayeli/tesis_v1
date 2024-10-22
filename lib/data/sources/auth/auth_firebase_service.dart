@@ -38,9 +38,12 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
    @override
   Future<Either<String, UserCredential>> signInWithFacebook() async {
     try {
-      final LoginResult loginResult = await FacebookAuth.instance.login();
+      final LoginResult loginResult = await FacebookAuth.instance.login(permissions: ['email','public_profile','user_posts']);
       final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
       UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+
+      final AccessToken? accessToken = await FacebookAuth.instance.accessToken;
+
       
       var user = userCredential.user;
 
@@ -53,7 +56,8 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
 
       return Right(userCredential);
     } catch (e) {
-      return Left('An error occurred during Facebook Signin');
+      return Left('An error occurred during Facebook Signin $e');
+
     }
   }
 

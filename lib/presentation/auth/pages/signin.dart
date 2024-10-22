@@ -1,7 +1,10 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tesis_v1/common/helpers/is_dark_mode.dart';
 import 'package:tesis_v1/common/widgets/appbar/app_bar.dart';
+import 'package:tesis_v1/core/configs/assets/app_vectors.dart';
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../domain/usecases/auth/signin.dart';
 import '../../../service_locator.dart';
@@ -15,15 +18,28 @@ class SigninPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
-          vertical: 50,
+          vertical: 40,
           horizontal: 30,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [  
+          children: [
             // Facebook Sign-in Button
             const BasicAppbar(),
-            const SizedBox(height: 70,),
+            const SizedBox(height: 100,),
+            SvgPicture.asset(
+              AppVectors.facebook,
+              height: 100,
+            ),
+            const SizedBox(height: 100,),
+            Text(
+                'Agradecemos tu participacion, requerimos tu acceso mediante tu cuenta de facebook',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 17,
+                  color: context.isDarkMode ? Colors.white : Colors.black
+                ),
+            ),
             BasicAppButton(
               onPressed: () async {
                 var result = await sl<SigninUseCase>().call();
@@ -47,7 +63,7 @@ class SigninPage extends StatelessWidget {
                   },
                 );
               },
-              title: 'Ingresar con Facebook',
+              title: 'Ingresar con Facebook',                 
             ),
           ],
         ),

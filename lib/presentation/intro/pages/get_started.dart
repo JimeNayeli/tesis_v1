@@ -37,10 +37,12 @@ class GetStartedPage extends StatelessWidget{
             ),
             child: Column(
                 children: [
-                  Align(
+                  Flexible(
+                  child: Align(
                     alignment: Alignment.topCenter,
                     child: SvgPicture.asset(
-                    AppVectors.logo,
+                      AppVectors.logo,
+                    ),
                   ),
                 ),
                   

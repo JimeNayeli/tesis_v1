@@ -46,12 +46,14 @@ class ChooseModePage extends StatelessWidget {
             ),
             child: Column(
                 children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: SvgPicture.asset(
-                      AppVectors.logo
+                  Flexible(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SvgPicture.asset(
+                        AppVectors.logo,
+                      ),
                     ),
-                  ),
+                ),
                   const Spacer(),
                   const Text(
                     'Escoger Modo',
@@ -67,28 +69,33 @@ class ChooseModePage extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        GestureDetector(
-                          onTap: (){
-                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
-                          },
-                          child: ClipOval(
+                           ClipOval(
                             child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
-                              child: Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xff30393C).withOpacity(0.5),
-                                  shape: BoxShape.circle
-                                ),
-                                child: SvgPicture.asset(
-                                  AppVectors.moon,
-                                  fit: BoxFit.none,
+                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(40),
+                                  onTap: () {
+                                    context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                                  },  
+                                  child: Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xff30393C).withOpacity(0.5),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: SvgPicture.asset(
+                                      AppVectors.moon,
+                                      fit: BoxFit.none,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
+
                         const SizedBox(height: 15,),
                         const Text(
                           'Dark Mode',
@@ -103,28 +110,32 @@ class ChooseModePage extends StatelessWidget {
                     const SizedBox(width: 40,),
                     Column(
                       children: [
-                        GestureDetector(
-                          onTap: (){
-                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
-                          },
-                          child: ClipOval(
+                          ClipOval(
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
-                              child: Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xff30393C).withOpacity(0.5),
-                                  shape: BoxShape.circle
-                                ),
-                                 child: SvgPicture.asset(
-                                  AppVectors.sun,
-                                  fit: BoxFit.none,
+                              child: Material( 
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(40),
+                                  onTap: () {
+                                    context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                                  }, 
+                                  child: Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xff30393C).withOpacity(0.5),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: SvgPicture.asset(
+                                      AppVectors.sun,
+                                      fit: BoxFit.none,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
                       const SizedBox(height: 15,),
                         const Text(
                           'Light Mode',

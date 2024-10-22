@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,20 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBbRjICOgdq6m98vahhiWRSYAmCNgj2Vig',
-    appId: '1:854750435834:android:dd59772265a44d3c85ac43',//1:854750435834:android:dd59772265a44d3c85ac43
-    messagingSenderId: '854750435834',
-    projectId: 'tesis-espe-15410',
-    storageBucket: 'tesis-espe-15410.appspot.com',
+    apiKey: 'AIzaSyCuXxbVioP5bMEVUPZI8m-rhpknr37GpMY',
+    appId: '1:506259824995:android:f7727b09079658e40bb356',
+    messagingSenderId: '506259824995',
+    projectId: 'espe-tesisv2',
+    storageBucket: 'espe-tesisv2.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB0guqdNoI7VSUnq5M8rRq0dVO_UgFj4t4',
-    appId: '1:937281614957:ios:7ce4c9d9beba6fdde0bb64',
-    messagingSenderId: '937281614957',
-    projectId: 'testsignin-1a319',
-    storageBucket: 'testsignin-1a319.appspot.com',
-    iosClientId: '937281614957-l3vcv7vfb4or1qeubaecv5jffb5u1f1o.apps.googleusercontent.com',
-    iosBundleId: 'com.example.signInWithThird',
+    apiKey: 'AIzaSyCuXxbVioP5bMEVUPZI8m-rhpknr37GpMY',
+    appId: '1:506259824995:ios:01a9df897fc729110bb356',
+    messagingSenderId: '506259824995',
+    projectId: 'espe-tesisv2',
+    storageBucket: 'espe-tesisv2.appspot.com',
+    iosBundleId: 'com.example.tesisV1',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyALEw75joESdSH0QKItUK51DSvSQ-kyh68',
+    appId: '1:506259824995:web:ee967ad752bc9fbf0bb356',
+    messagingSenderId: '506259824995',
+    projectId: 'espe-tesisv2',
+    authDomain: 'espe-tesisv2.firebaseapp.com',
+    storageBucket: 'espe-tesisv2.appspot.com',
+    measurementId: 'G-F7CWPEBBVE',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAU5_wOa0RFVRu7SrE0d9JlIcptnUIwugg',
+    appId: '1:506259824995:ios:01a9df897fc729110bb356',
+    messagingSenderId: '506259824995',
+    projectId: 'espe-tesisv2',
+    storageBucket: 'espe-tesisv2.appspot.com',
+    iosBundleId: 'com.example.tesisV1',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyALEw75joESdSH0QKItUK51DSvSQ-kyh68',
+    appId: '1:506259824995:web:31e9d68b9efd69f00bb356',
+    messagingSenderId: '506259824995',
+    projectId: 'espe-tesisv2',
+    authDomain: 'espe-tesisv2.firebaseapp.com',
+    storageBucket: 'espe-tesisv2.appspot.com',
+    measurementId: 'G-VLTND5PHTV',
+  );
+
 }

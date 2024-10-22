@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506259824995",
+    "project_id": "espe-tesisv2",
+    "storage_bucket": "espe-tesisv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506259824995:android:f7727b09079658e40bb356",
+        "android_client_info": {
+          "package_name": "com.example.tesis_v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuXxbVioP5bMEVUPZI8m-rhpknr37GpMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
