@@ -49,7 +49,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   dartz: ^0.10.1
   cloud_firestore: ^5.4.1
-  get_it: ^7.6.7
+  get_it: ^8.0.1
   tflite_flutter: ^0.11.0
 
 dev_dependencies:
@@ -61,7 +61,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -79,6 +79,7 @@ flutter:
     - assets/fonts/
     - assets/images/
     - assets/vectors/
+    - assets/model/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

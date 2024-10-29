@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tesis_v1/common/helpers/is_dark_mode.dart';
 
 class BasicAppButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -19,7 +20,12 @@ class BasicAppButton extends StatelessWidget {
         minimumSize: Size.fromHeight(height ?? 80),
       ), 
       child: Text(
-        title
+        title,
+        style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 17,
+                  color: context.isDarkMode? Colors.white : Colors.black
+                )
       )
     );
   }

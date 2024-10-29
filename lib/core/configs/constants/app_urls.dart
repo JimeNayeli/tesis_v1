@@ -5,4 +5,7 @@ class AppURLs {
   static const mediaAlt = 'alt=media';
   static const defaultImage = 'https://cdn-icons-png.flaticon.com/512/10542/10542486.png';
 
+  //APIs
+  static const getPosts = 'https://graph.facebook.com/v20.0/me/posts?fields=id,message,created_time&access_token=';
+
 }

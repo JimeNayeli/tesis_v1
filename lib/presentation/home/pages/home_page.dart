@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:tesis_v1/common/widgets/posts/post_user_facebook.dart';
 class HomePage extends StatelessWidget {
   final String displayName;
   //final AccessToken? result = await FacebookAuth.instance.accessToken;
@@ -11,14 +12,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome $displayName'), // Display user's name in the app bar
+        title: Text('Mis Posts de Facebook'),
       ),
-      body: Center(
-        child: Text(
-          'Hello, $displayName!', // Greet the user
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      body: FacebookPostsWidget(),
     );
   }
 }
